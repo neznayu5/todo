@@ -1,0 +1,8 @@
+/.venv
+/client.py
+/cors_test.html
+/get-pip.py
+/nats-server.exe
+/tasks.db
+/venv
+/__pycache__

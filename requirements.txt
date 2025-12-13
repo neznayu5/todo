@@ -1,0 +1,10 @@
+httpx
+fastapi
+uvicorn 
+sqlalchemy
+asyncpg
+python-dotenv
+pydantic
+websockets
+aiosqlite
+sqlmodel
