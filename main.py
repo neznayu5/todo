@@ -13,13 +13,11 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sess
 from sqlmodel import SQLModel, Field, Session
 from datetime import datetime
 
-# Исправляем: создаем async движок правильно
 engine = create_async_engine(
     "sqlite+aiosqlite:///./tasks.db",
     echo=True
 )
 
-# Исправляем: используем async_sessionmaker
 async_session = async_sessionmaker(
     engine,
     class_=AsyncSession,
@@ -46,7 +44,6 @@ class ConnectionManager:
 
 manager = ConnectionManager()
 
-# Исправляем: убираем table=True, так как используем SQLAlchemy declarative_base
 class TaskModel(SQLModel, table=True):
     __tablename__ = "tasks"
     id: Optional[int] = Field(default=None, primary_key=True)
